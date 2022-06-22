@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b45a92113cf54ea1b4cc92c948f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FollowTarget: {fileID: 1753360119}
+  ViewRangeCollider2D: {fileID: 0}
+  ManualUpDownLookDistance: 3
+  CameraSpeed: 0.5
+  ResetSpeed: 0.5
+  LookAheadTrigger: 10
+  HorizontalLookDistance: 3
+  CameraOffset: {x: 0, y: 0, z: 0}
+  ShakeDuration: 0
+  ShakeDecay: 0
+  ShakeIntensity: 0
+  _shakeTimer: 0
+  OpenMotionZoom: 1
+  MinimumZoom: 5
+  MaximumZoom: 10
+  MinimumAngleZoom: 60
+  MaximumAngleZoom: 70
+  MotionZoomSpeed: 0.4
+  ZoomInOutSpeed: 0.1
+  ManualZoomInOutLookDistance: 3
+  ManualZoomInOutLookAngle: 20
 --- !u!1 &621996251
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +489,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649631896}
   m_CullTransparentMesh: 1
+--- !u!4 &1753360119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3829765987814637161, guid: c4c633d5478061c45b8b8b9ebe7c6bad, type: 3}
+  m_PrefabInstance: {fileID: 3829765986306652408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1971665077
 GameObject:
   m_ObjectHideFlags: 0
