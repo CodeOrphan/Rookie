@@ -11,10 +11,20 @@ using UnityEngine;
         private SerializedProperty FollowTarget;
         private SerializedProperty ViewRangeCollider2D;
         private SerializedProperty CameraOffset;
+        private SerializedProperty ManualUpDownLookDistance;
+        private SerializedProperty ManualLeftRightLookDistance;
+        private SerializedProperty CameraSpeed;
         
         private SerializedProperty ShakeDuration;
         private SerializedProperty ShakeDecay;
         private SerializedProperty ShakeIntensity;
+        
+        private SerializedProperty LookAheadTrigger;
+        private SerializedProperty HorizontalLookDistance;
+        
+        private SerializedProperty ZoomInOutSpeed;
+        private SerializedProperty OpenMotionZoom;
+        private SerializedProperty MotionZoomSpeed;
 
         
         
@@ -23,10 +33,21 @@ using UnityEngine;
             FollowTarget = serializedObject.FindProperty("FollowTarget");
             ViewRangeCollider2D = serializedObject.FindProperty("ViewRangeCollider2D");
             CameraOffset = serializedObject.FindProperty("CameraOffset");
+            ManualUpDownLookDistance = serializedObject.FindProperty("ManualUpDownLookDistance");
+            ManualLeftRightLookDistance = serializedObject.FindProperty("ManualLeftRightLookDistance");
+            CameraSpeed = serializedObject.FindProperty("CameraSpeed");
+            
             
             ShakeDuration = serializedObject.FindProperty("ShakeDuration");
             ShakeDecay = serializedObject.FindProperty("ShakeDecay");
             ShakeIntensity = serializedObject.FindProperty("ShakeIntensity");
+            
+            LookAheadTrigger = serializedObject.FindProperty("LookAheadTrigger");
+            HorizontalLookDistance = serializedObject.FindProperty("HorizontalLookDistance");
+            
+            ZoomInOutSpeed = serializedObject.FindProperty("ZoomInOutSpeed");
+            OpenMotionZoom = serializedObject.FindProperty("OpenMotionZoom");
+            MotionZoomSpeed = serializedObject.FindProperty("MotionZoomSpeed");
         }
 
         public override void OnInspectorGUI()
@@ -48,8 +69,9 @@ using UnityEngine;
             EditorGUILayout.Space(10);
             EditorGUILayout.PrefixLabel("摄像机最大偏移设置");
             EditorGUILayout.BeginVertical("box");
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("ManualUpDownLookDistance"), new GUIContent("摄像机上移下移深度"),true);
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("CameraSpeed"), new GUIContent("摄像机平滑速度"),true);
+            EditorGUILayout.PropertyField(ManualUpDownLookDistance, new GUIContent("摄像机上移下移深度"),true);
+            EditorGUILayout.PropertyField(ManualLeftRightLookDistance, new GUIContent("摄像机左移右移深度"),true);
+            EditorGUILayout.PropertyField(CameraSpeed, new GUIContent("摄像机平滑速度"),true);
             EditorGUILayout.EndVertical();
             
             EditorGUILayout.Space(10);
@@ -63,19 +85,19 @@ using UnityEngine;
             EditorGUILayout.Space(10);
             EditorGUILayout.PrefixLabel("偏移设置");
             EditorGUILayout.BeginVertical("box");
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("LookAheadTrigger"), new GUIContent("偏移触发移动距离"),true);
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("HorizontalLookDistance"), new GUIContent("水平视角宽度"),true);
+            EditorGUILayout.PropertyField(LookAheadTrigger, new GUIContent("偏移触发移动距离"),true);
+            EditorGUILayout.PropertyField(HorizontalLookDistance, new GUIContent("水平视角宽度"),true);
             EditorGUILayout.EndVertical();
             
             EditorGUILayout.Space(10);
             EditorGUILayout.PrefixLabel("缩放");
             EditorGUILayout.BeginVertical("box");
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("ZoomInOutSpeed"), new GUIContent("摄像机缩放速度"),true);
-            EditorGUILayout.PropertyField(serializedObject.FindProperty("OpenMotionZoom"), new GUIContent("是否开启速度缩放平滑"),true);
+            EditorGUILayout.PropertyField(ZoomInOutSpeed, new GUIContent("摄像机缩放速度"),true);
+            EditorGUILayout.PropertyField(OpenMotionZoom, new GUIContent("是否开启速度缩放平滑"),true);
+            EditorGUILayout.PropertyField(MotionZoomSpeed, new GUIContent("根据角色速度缩放平滑速度"),true);
             if (_cameraController.OpenMotionZoom)
             {
                 EditorGUILayout.Space(5);
-                EditorGUILayout.PropertyField(serializedObject.FindProperty("MotionZoomSpeed"), new GUIContent("根据角色速度缩放平滑速度"),true);
                 if (Camera.main.orthographic)
                 {
                     EditorGUILayout.Space(5);
@@ -105,6 +127,14 @@ using UnityEngine;
                 else if (GUILayout.Button("摄像机向下移动"))
                 {
                     _cameraController.LookDown();
+                }
+                else if (GUILayout.Button("摄像机向左看"))
+                {
+                    _cameraController.LookLeft();
+                }
+                else if (GUILayout.Button("摄像机向右看"))
+                {
+                    _cameraController.LookRight();
                 }
                 else if(GUILayout.RepeatButton("摄像机移动重置"))
                 {

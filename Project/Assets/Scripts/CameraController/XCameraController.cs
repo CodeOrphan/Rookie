@@ -48,6 +48,7 @@ public class XCameraController : MonoBehaviour
 
     //摄像机上移下移深度
     public float ManualUpDownLookDistance = 3;
+    public float ManualLeftRightLookDistance = 3;
 
     public float CameraSpeed = 0.5f;
 
@@ -513,27 +514,27 @@ public class XCameraController : MonoBehaviour
         _lookDirectionModifier = new Vector3(0, -ManualUpDownLookDistance, 0);
     }
 
-    // public virtual void LookForward()
-    // {
-    //     _lookDirectionModifier = new Vector3(GetTargetDirection(), 0, 0);
-    // }
-    //
-    // public virtual void LookBack()
-    // {
-    //     _lookDirectionModifier = new Vector3(GetTargetDirection(), 0, 0);
-    // }
-    //
-    // protected virtual float GetTargetDirection()
-    // {
-    //     if (FollowTarget.localScale.x > 0f)
-    //     {
-    //         return ManualForwardBackLookDistance;
-    //     }
-    //     else
-    //     {
-    //         return -ManualForwardBackLookDistance;
-    //     }
-    // }
+    public virtual void LookLeft()
+    {
+        _lookDirectionModifier = new Vector3(-ManualLeftRightLookDistance, 0, 0);
+    }
+    
+    public virtual void LookRight()
+    {
+        _lookDirectionModifier = new Vector3(ManualLeftRightLookDistance, 0, 0);
+    }
+    
+    protected virtual float GetTargetDirection()
+    {
+        if (FollowTarget.localScale.x > 0f)
+        {
+            return ManualLeftRightLookDistance;
+        }
+        else
+        {
+            return -ManualLeftRightLookDistance;
+        }
+    }
 
     public virtual void ResetLookUpDown()
     {
