@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Platform
   - Player
-  - 
-  - 
+  - Obstacle
+  - Enemy
   - 
   - 
   - 
@@ -44,12 +44,18 @@ TagManager:
   - name: Background
     uniqueID: 1592172781
     locked: 0
-  - name: Wall
+  - name: 
     uniqueID: 1665651701
     locked: 0
   - name: Platform
     uniqueID: 3664464511
     locked: 0
-  - name: Player
+  - name: Wall
     uniqueID: 98887611
+    locked: 0
+  - name: Obstacle
+    uniqueID: 1727197765
+    locked: 0
+  - name: Player
+    uniqueID: 3677379607
     locked: 0
