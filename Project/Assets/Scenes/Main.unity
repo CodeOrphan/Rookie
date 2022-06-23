@@ -3586,7 +3586,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2
+  orthographic size: 1.523096
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3633,18 +3633,18 @@ MonoBehaviour:
   ViewRangeCollider2D: {fileID: 0}
   ManualUpDownLookDistance: 3
   ManualLeftRightLookDistance: 3
-  CameraSpeed: 0.5
+  CameraSpeed: 0.1
   ResetSpeed: 0.5
   LookAheadTrigger: 10
   HorizontalLookDistance: 3
   CameraOffset: {x: 0, y: 0, z: 0}
-  ShakeDuration: 0
-  ShakeDecay: 0
-  ShakeIntensity: 0
+  ShakeDuration: 0.1
+  ShakeDecay: 0.5
+  ShakeIntensity: 2
   _shakeTimer: 0
   OpenMotionZoom: 1
-  MinimumZoom: 5
-  MaximumZoom: 10
+  MinimumZoom: 2
+  MaximumZoom: 5
   MinimumAngleZoom: 60
   MaximumAngleZoom: 70
   MotionZoomSpeed: 0.4
@@ -5668,8 +5668,8 @@ Rigidbody2D:
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &1753360121
 BoxCollider2D:
@@ -5709,13 +5709,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d4b9d785d24b58bb2af70afabd06bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PawnState:
+    LateralSlopeAngle: 0
+    BelowSlopeAngle: 0
   Movement: {x: 0, y: 0}
   SmoothMovement: 1
-  AxisHorizontal: Horizontal
-  AxisVertical: Vertical
-  InputThreshold: 0.1
-  MovementSpeed: 10
+  MovementSpeed: 5
   MovementFactor: 15
+  PlatformMask:
+    serializedVersion: 2
+    m_Bits: 256
+  RayOffsetHorizontal: 0.01
+  RayOffsetVertical: 0.05
 --- !u!1 &1971665077
 GameObject:
   m_ObjectHideFlags: 0
