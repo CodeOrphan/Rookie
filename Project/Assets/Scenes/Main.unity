@@ -197,27 +197,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3829765987814637174, guid: c4c633d5478061c45b8b8b9ebe7c6bad, type: 3}
   m_PrefabInstance: {fileID: 105748763}
   m_PrefabAsset: {fileID: 0}
---- !u!50 &105748771
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 105748765}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &105748772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.5
-  height: 2
+  height: 1
   canMove: 1
   maxSpeed: 1
   gravity: {x: 0, y: 0, z: 0}
@@ -254,7 +233,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 2
+  pickNextWaypointDist: 1.2
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
@@ -315,9 +294,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00017118454, y: 0}
+  m_Offset: {x: 0.011773586, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5024781
+  m_Radius: 0.30524206
 --- !u!1 &319717511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5730,6 +5709,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d4b9d785d24b58bb2af70afabd06bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Movement: {x: 0, y: 0}
+  SmoothMovement: 1
+  AxisHorizontal: Horizontal
+  AxisVertical: Vertical
+  InputThreshold: 0.1
+  MovementSpeed: 10
+  MovementFactor: 15
 --- !u!1 &1971665077
 GameObject:
   m_ObjectHideFlags: 0
