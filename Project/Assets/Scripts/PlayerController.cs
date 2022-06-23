@@ -159,6 +159,26 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (PawnState.GetState(XPawnStateDefine.IsCollidingLeft) && _normalizedHorizontalSpeed.x < 0)
+        {
+            _normalizedHorizontalSpeed.x = 0;
+        }
+        
+        if (PawnState.GetState(XPawnStateDefine.IsCollidingRight) && _normalizedHorizontalSpeed.x > 0)
+        {
+            _normalizedHorizontalSpeed.x = 0;
+        }
+
+        if (PawnState.GetState(XPawnStateDefine.IsCollidingAbove) && _normalizedHorizontalSpeed.y > 0)
+        {
+            _normalizedHorizontalSpeed.y = 0;
+        }
+        
+        if (PawnState.GetState(XPawnStateDefine.IsCollidingBelow) && _normalizedHorizontalSpeed.y < 0)
+        {
+            _normalizedHorizontalSpeed.y = 0;
+        }
+        
         Vector2 realHorizontalForce;
         if (SmoothMovement)
         {
@@ -181,7 +201,7 @@ public class PlayerController : MonoBehaviour
         {
             MoveState.ChangeState(XPlayerState.Idle);
         }
-
+        
         _rigidbody2D.velocity = realHorizontalForce;
     }
 
