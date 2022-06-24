@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         
         Vector3 dir = _mainCamera.position - transform.position;
 
-        SpriteModel.transform.LookAt(dir);
+        // SpriteModel.transform.LookAt(dir);
     }
 
     public void LateUpdate()
