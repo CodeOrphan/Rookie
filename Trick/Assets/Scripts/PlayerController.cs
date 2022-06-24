@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using MoreMountains.Tools;
 using UnityEngine;
 
+public enum XPlayerState
+{
+    Idle,
+    WalkTop,
+    WalkBottom,
+    Walk,
+    
+}
+
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody _rigidbody;
@@ -28,9 +37,11 @@ public class PlayerController : MonoBehaviour
     public float MovementFactor = 15;
     
     public HashSet<int> _animatorParameters { get; set; }
-
+    public MMStateMachine<XPlayerState> MoveState;
 
     private int _idleParameter;
+    private int _walkTopParameter;
+    private int _walkBottomParameter;
     private int _walkParameter;
 
     public Vector3 Speed => _rigidbody.velocity;
@@ -47,11 +58,21 @@ public class PlayerController : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
         
         _animatorParameters = new HashSet<int>();
+        MoveState = new MMStateMachine<XPlayerState>(gameObject, true);
         if (Camera.main is not null) _mainCamera = Camera.main.transform;
+
+        if (SpriteModel != null)
+        {
+            _animator = SpriteModel.gameObject.GetComponent<Animator>();
+        }
 
         Physics2D.autoSyncTransforms = true;
         RegisterAnimatorParameter("Idle", AnimatorControllerParameterType.Bool, out _idleParameter);
+        RegisterAnimatorParameter("WalkTop", AnimatorControllerParameterType.Bool, out _walkTopParameter);
+        RegisterAnimatorParameter("WalkBottom", AnimatorControllerParameterType.Bool, out _walkBottomParameter);
         RegisterAnimatorParameter("Walk", AnimatorControllerParameterType.Bool, out _walkParameter);
+        
+        
     }
 
     public virtual void RegisterAnimatorParameter(string parameterName, AnimatorControllerParameterType parameterType,
@@ -70,14 +91,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool IsIdle;
-    private bool IsWalk;
-
     public void Update()
     {
-        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _idleParameter, IsIdle,
+        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _idleParameter, MoveState.CurrentState == XPlayerState.Idle,
             _animatorParameters, true);
-        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkParameter, IsWalk,
+        
+        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkParameter, MoveState.CurrentState == XPlayerState.Walk,
+            _animatorParameters, true);
+        
+        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkTopParameter, MoveState.CurrentState == XPlayerState.WalkTop,
+            _animatorParameters, true);
+        
+        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkBottomParameter, MoveState.CurrentState == XPlayerState.WalkBottom,
             _animatorParameters, true);
 
         _positionTolerance = transform.position - _lastPosition;
@@ -152,18 +177,27 @@ public class PlayerController : MonoBehaviour
             realHorizontalForce = _normalizedHorizontalSpeed * MovementSpeed;
         }
 
-        if (Mathf.Abs(_normalizedHorizontalSpeed.x) > SmallValue ||
-            Mathf.Abs(_normalizedHorizontalSpeed.y) > SmallValue)
+        if (Mathf.Abs(_normalizedHorizontalSpeed.x) > SmallValue)
         {
-            IsWalk = true;
-            IsIdle = false;
+            MoveState.ChangeState(XPlayerState.Walk);
         }
+        
+        
+        if (_normalizedHorizontalSpeed.z > SmallValue)
+        {
+            MoveState.ChangeState(XPlayerState.WalkTop);
+        }
+        
+        if (_normalizedHorizontalSpeed.z < -SmallValue)
+        {
+            MoveState.ChangeState(XPlayerState.WalkBottom);
+        }
+        
 
         if (Mathf.Abs(_normalizedHorizontalSpeed.x) < SmallValue &&
-            Mathf.Abs(_normalizedHorizontalSpeed.y) < SmallValue)
+            Mathf.Abs(_normalizedHorizontalSpeed.z) < SmallValue)
         {
-            IsWalk = false;
-            IsIdle = true;
+            MoveState.ChangeState(XPlayerState.Idle);
         }
         
         _rigidbody.velocity = realHorizontalForce;
