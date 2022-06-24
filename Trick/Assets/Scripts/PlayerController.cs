@@ -71,10 +71,12 @@ public class PlayerController : MonoBehaviour
         RegisterAnimatorParameter("WalkTop", AnimatorControllerParameterType.Bool, out _walkTopParameter);
         RegisterAnimatorParameter("WalkBottom", AnimatorControllerParameterType.Bool, out _walkBottomParameter);
         RegisterAnimatorParameter("Walk", AnimatorControllerParameterType.Bool, out _walkParameter);
-        
+
+
         
     }
 
+    
     public virtual void RegisterAnimatorParameter(string parameterName, AnimatorControllerParameterType parameterType,
         out int parameter)
     {
@@ -112,6 +114,16 @@ public class PlayerController : MonoBehaviour
         Vector3 dir = _mainCamera.position - transform.position;
 
         // SpriteModel.transform.LookAt(dir);
+
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            Camera.main.GetComponent<FadeInOut>().BackGroundControl(false);
+        }
+
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            Camera.main.GetComponent<FadeInOut>().BackGroundControl(true);
+        }
     }
 
     public void LateUpdate()
