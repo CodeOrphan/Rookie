@@ -9,7 +9,7 @@ public class ScareOffPlayer : MonoBehaviour
     public float time = 0.5f;
     public bool isScareOff = false;
     private float m_time = 0f;
-
+    private float timer;
     void Update()
     {
         if (isScareOff)
@@ -23,6 +23,20 @@ public class ScareOffPlayer : MonoBehaviour
                 isScareOff = false;
                 UnfreezePlayer();
             }
+        }
+
+        if (_newPosition != Vector3.zero)
+        {
+            timer += Time.deltaTime;
+            var t = Vector3.Lerp(player.transform.position, _newPosition, timer);
+            player.transform.position = t;
+            player.GetComponent<PlayerController>().MoveState.ChangeState(XPlayerState.Walk);
+        }
+
+        if (timer >= 1)
+        {
+            _newPosition = Vector3.zero;
+            player.GetComponent<PlayerController>().MoveState.ChangeState(XPlayerState.Idle);
         }
     }
 
@@ -57,9 +71,15 @@ public class ScareOffPlayer : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = false;
     }
 
+    private Vector3 _newPosition;
     private void PlayBall()
     {
         //向下移动
+        if (player)
+        {
+            _newPosition = new Vector3(player.transform.position.x, player.transform.position.y,
+                player.transform.position.z - 10);
+        }
     }
 
     private void Meow()
