@@ -118,6 +118,7 @@ public class PlayerController : MonoBehaviour
         }
 
         ActiveUi(id);
+        FadeInOut.FadeInOutInstance.fadeSpeed = 1f;
         FadeInOut.FadeInOutInstance.BackGroundControl(false);
         return t;
     }
@@ -160,8 +161,8 @@ public class PlayerController : MonoBehaviour
             Camera.main.orthographicSize = 20f;
         }
 
-        var start =  scene.Scene.transform.Find("StartGame");
-        transform.position = start?.position ?? Vector3.zero;
+        var start =  scene.Scene.transform.Find("InitCamera");
+        Camera.main.transform.position = start?.position ?? Vector3.zero;
         
         _currentSceneId = id;
         return scene.Scene;

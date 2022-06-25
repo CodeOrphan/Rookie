@@ -6,4 +6,5 @@ public class NextScene : MonoBehaviour
 {
     public int NextSceneId;
     public string StartPositionName;
+    public string StartInitCamera;
 }

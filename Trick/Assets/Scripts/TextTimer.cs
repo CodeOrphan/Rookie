@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TextTimer : MonoBehaviour
 {
     private Text txtTimer;
-    public float second = 999;
+    public float second = 6000;
  
     private void Start()
     {
