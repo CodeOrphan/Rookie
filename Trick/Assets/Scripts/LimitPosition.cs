@@ -8,6 +8,7 @@ public class LimitPosition : MonoBehaviour
     public float MaxPositionX;
     public float MinPositionX;
     public float attenuation = 10f;
+    public bool banSlider = false;
 
     public Slider Slider;
     private Rigidbody _rigidbody;
@@ -24,11 +25,6 @@ public class LimitPosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Slider == null)
-        {
-            return;
-        }
-
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinPositionX, MaxPositionX),
             transform.position.y, transform.position.z);
 
@@ -40,6 +36,15 @@ public class LimitPosition : MonoBehaviour
 
         _rigidbody.velocity = Vector3.Lerp(_rigidbody.velocity, Vector3.zero, Time.deltaTime * attenuation);
 
+        if (banSlider)
+        {
+            return;
+        }
+
+        if (Slider == null)
+        {
+            return;
+        }
 
         float progress = (transform.position.x + Mathf.Abs(MinPositionX)) /
                          (Mathf.Abs(MinPositionX) + Mathf.Abs(MaxPositionX));

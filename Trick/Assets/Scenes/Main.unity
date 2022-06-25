@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: thisScene
       value: 
       objectReference: {fileID: 680368130}
+    - target: {fileID: 8572056610518863904, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8572056611114824324, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -351,9 +355,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1250537658, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+      propertyPath: nextBall
+      value: 
+      objectReference: {fileID: 1546854147}
     - target: {fileID: 212665912653570761, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212665913330893216, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26
       objectReference: {fileID: 0}
     - target: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_Name
@@ -492,6 +504,11 @@ GameObject:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
   m_PrefabInstance: {fileID: 946980446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1546854147 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8572056610518863904, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
+  m_PrefabInstance: {fileID: 680368129}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2008036391
 GameObject:
