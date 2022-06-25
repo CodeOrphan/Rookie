@@ -16,15 +16,29 @@ public class FadeInOut : MonoBehaviour
         Image.color = Color.clear;
     }
 
+    private const float _smallValue = 0.01f;
     void Update()
     {
         if (isBlack == false)
         {
             Image.color = Color.Lerp(Image.color, Color.clear, Time.deltaTime * fadeSpeed * 0.5f);//渐亮
+            if (Image.color.a < _smallValue)
+            {
+                Image.color = Color.clear;
+            }
+
+            if (Image.color == Color.clear)
+            {
+                Image.gameObject.SetActive(false);
+            }
         }
         else if (isBlack)
         {
             Image.color = Color.Lerp(Image.color, Color.black, Time.deltaTime * fadeSpeed);//渐暗
+            if (Image.color.a > 1-_smallValue)
+            {
+                Image.color = Color.black;
+            }
         }
     }
 
@@ -40,6 +54,11 @@ public class FadeInOut : MonoBehaviour
         else
         {
             Image.color = Color.clear;
+        }
+
+        if (!Image.gameObject.activeSelf)
+        {
+            Image.gameObject.SetActive(true);
         }
     }
 }
