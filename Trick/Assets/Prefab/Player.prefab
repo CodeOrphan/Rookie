@@ -120,8 +120,8 @@ MonoBehaviour:
   - {fileID: 5420391475217726751}
   - {fileID: 5420391476338006577}
   m_Bounds:
-    m_Center: {x: 0.047750473, y: -0.09676552, z: 0}
-    m_Extent: {x: 5.1317654, y: 4.376217, z: 0}
+    m_Center: {x: 0.047750473, y: -0.09676504, z: 0.00000023841858}
+    m_Extent: {x: 5.1317654, y: 4.376219, z: 0.00000023841858}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -224,8 +224,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.78053, y: 9.522459, z: 0.41788006}
-  m_Center: {x: -0.41672277, y: -0.21644974, z: 0.014470577}
+  m_Size: {x: 11.78053, y: 9.522459, z: 6.633334}
+  m_Center: {x: -0.41672277, y: -0.21644974, z: -3.0932577}
 --- !u!54 &5420391475270478249
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -259,6 +259,17 @@ MonoBehaviour:
   SmoothMovement: 1
   MovementSpeed: 10
   MovementFactor: 15
+  StartLevel: {fileID: 6791834863329482794, guid: 48884ad5c5b072e489b4f3f7cc3ec44e, type: 3}
+  Level1: {fileID: 135789883303207229, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+  Level2: {fileID: 0}
+  Level3: {fileID: 0}
+  Root: {fileID: 0}
+  CurrentSceneName: 
+  StartUi: {fileID: 0}
+  Level1Ui: {fileID: 0}
+  Level2Ui: {fileID: 0}
+  Level3Ui: {fileID: 0}
+  OnExitLevelPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &5420391475270478247
 MonoBehaviour:
   m_ObjectHideFlags: 0
