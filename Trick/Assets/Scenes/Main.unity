@@ -361,9 +361,17 @@ PrefabInstance:
       propertyPath: nextBall
       value: 
       objectReference: {fileID: 1546854147}
+    - target: {fileID: 212665912653570761, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_Name
       value: Level1
+      objectReference: {fileID: 0}
+    - target: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 221211468705745026, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_RootOrder
@@ -736,7 +744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8429339607099041753, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: nextScene
