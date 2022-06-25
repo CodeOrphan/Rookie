@@ -326,7 +326,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 4.153, y: 0}
   m_SizeDelta: {x: 8.306, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -654,7 +654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212665913330893231}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -22.73, y: 7.5, z: 31.5}
+  m_LocalPosition: {x: -26, y: 7.5, z: 31.5}
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -966,7 +966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &221211468705745026
 Transform:
   m_ObjectHideFlags: 0
@@ -1688,6 +1688,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616676747767410969, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: thisScene
+      value: 
+      objectReference: {fileID: 221211468705745025}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
 --- !u!114 &4503221127870461168 stripped

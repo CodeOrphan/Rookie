@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GameController : PersistentSingleton<GameController>
 {
+    public int PassLevelCount = 0;
+    
     // private int _currentSceneId;
     //
     // private class XGameScene

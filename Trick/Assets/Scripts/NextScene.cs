@@ -22,6 +22,7 @@ public class NextScene : MonoBehaviour
             PlayerController = playerController;
             FadeInOut.FadeInOutInstance.ReSpawnSceneFade(thisScene, nextScene);
             isPassed = true;
+            GameController.Instance.PassLevelCount++;
         }
     }
 

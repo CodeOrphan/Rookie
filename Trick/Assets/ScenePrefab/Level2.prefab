@@ -54,7 +54,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8572056610518863909
 Transform:
   m_ObjectHideFlags: 0
@@ -669,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8572056611114824324
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,6 +1046,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616676747767410969, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: thisScene
+      value: 
+      objectReference: {fileID: 8572056611114824327}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
 --- !u!4 &167568355975733632 stripped
@@ -1114,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6120714231784671017, guid: 0a0aa0d4eb2e8c34091f33b2a827e5e4, type: 3}
       propertyPath: m_Name
-      value: Player2D
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6120714231918476598, guid: 0a0aa0d4eb2e8c34091f33b2a827e5e4, type: 3}
       propertyPath: m_Bounds.m_Center.x
@@ -1326,6 +1330,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8616676747767410969, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: thisScene
+      value: 
+      objectReference: {fileID: 8572056611114824327}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
 --- !u!4 &8779939355090498038 stripped
