@@ -187,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &111413662
 RectTransform:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isBlack: 0
-  fadeSpeed: 1
+  fadeSpeed: 5
   Image: {fileID: 111413664}
   rectTransform: {fileID: 111413662}
 --- !u!114 &111413664
@@ -277,6 +277,10 @@ PrefabInstance:
       propertyPath: thisScene
       value: 
       objectReference: {fileID: 680368130}
+    - target: {fileID: 2451987037491254229, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8572056610518863904, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -588,7 +592,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 50
   m_TargetDisplay: 0
 --- !u!224 &2008036395
 RectTransform:
@@ -682,5 +686,6 @@ PrefabInstance:
       propertyPath: thisScene
       value: 
       objectReference: {fileID: 1376581161}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 162203615992204826, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
