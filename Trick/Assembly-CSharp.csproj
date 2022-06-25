@@ -60,6 +60,30 @@
      <Compile Include="Assets\Scripts\TextTimer.cs" />
      <Compile Include="Assets\Scripts\KeepPositionOnEnable.cs" />
      <Compile Include="Assets\Scripts\BallCrossDoor.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\ScreenSpaceReflection\ScreenSpaceReflection.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\LensAberrations.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\DepthOfField.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\ImageEffectHelper.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Helpers\Settings.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Bloom.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Helpers\PropertyObserver.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\MinAttribute.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\AmbientOcclusion.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\RenderTextureUtility.cs" />
+     <Compile Include="Assets\Scripts\LensAberrationsLerp.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\TonemappingColorGrading.cs" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\Resources\MedianFilter.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\Resources\LensAberrations.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Resources\Bloom.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Resources\AmbientOcclusion.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\TonemappingColorGrading.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\TonemappingColorGrading.cginc" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\Resources\BokehSplatting.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\HistogramRender.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\Resources\HistogramCompute.compute" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\ScreenSpaceReflection\Resources\ScreenSpaceReflection.shader" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\ScreenSpaceReflection\Resources\ScreenSpaceRaytrace.cginc" />
+     <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\Resources\DepthOfField.shader" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.4f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -705,9 +729,6 @@
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
      </Reference>
@@ -794,9 +815,6 @@
      </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst.Editor">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>

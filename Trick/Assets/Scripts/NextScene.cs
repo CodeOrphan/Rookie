@@ -9,7 +9,6 @@ public class NextScene : MonoBehaviour
     private PlayerController PlayerController;
     
     public bool isPassed = false;
-    public GameObject ball;
     public void OnTriggerEnter(Collider other)
     {
         PlayerController playerController = other.GetComponent<PlayerController>();
@@ -22,12 +21,6 @@ public class NextScene : MonoBehaviour
             //     thisScene.SetActive(false);
             PlayerController = playerController;
             FadeInOut.FadeInOutInstance.ReSpawnSceneFade(thisScene, nextScene);
-
-            if (ball)
-            {
-                 Rigidbody rigidbody = ball.GetComponent<Rigidbody>();
-                 
-            }
             isPassed = true;
         }
     }
