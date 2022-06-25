@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class LimitPosition : MonoBehaviour
 {
-    private float MaxPositionX;
-    private float MinPositionX;
+    public float MaxPositionX;
+    public float MinPositionX;
     public float attenuation = 10f;
 
-    public Scrollbar Scrollbar;
+    public Slider Slider;
     private Rigidbody _rigidbody;
 
     private RectTransform _rect;
@@ -18,19 +18,16 @@ public class LimitPosition : MonoBehaviour
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _rect = Scrollbar.GetComponent<RectTransform>();
+        _rect = Slider.GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Scrollbar == null)
+        if (Slider == null)
         {
             return;
         }
-
-        MinPositionX = _rect.position.x - _rect.rect.width / 2;
-        MaxPositionX = _rect.position.x + _rect.rect.width / 2;
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, MinPositionX, MaxPositionX),
             transform.position.y, transform.position.z);
@@ -47,6 +44,6 @@ public class LimitPosition : MonoBehaviour
         float progress = (transform.position.x + Mathf.Abs(MinPositionX)) /
                          (Mathf.Abs(MinPositionX) + Mathf.Abs(MaxPositionX));
 
-        Scrollbar.size = progress;
+        Slider.value = progress;
     }
 }
