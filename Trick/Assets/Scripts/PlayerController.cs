@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
         RegisterAnimatorParameter("WalkBottom", AnimatorControllerParameterType.Bool, out _walkBottomParameter);
         RegisterAnimatorParameter("Walk", AnimatorControllerParameterType.Bool, out _walkParameter);
 
-
+        FadeInOut.FadeInOutInstance.BackGroundControl(false);
     }
     
     public bool StopInput = false;

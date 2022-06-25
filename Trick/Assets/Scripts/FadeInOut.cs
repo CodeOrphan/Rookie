@@ -31,10 +31,20 @@ public class FadeInOut : MonoBehaviour
         _fadeInOut = GetComponent<FadeInOut>();
     }
 
-    private const float _smallValue = 0.01f;
+    private void Init()
+    {
+        if (Image == null)
+        {
+            Image = GetComponent<Image>();
+        }
+    }
+    
+
+    private const float _smallValue = 0.1f;
     private bool _open = false;
     void Update()
     {
+        UpdateSceneFade();
         if (!_open)
         {
             return;
@@ -55,6 +65,72 @@ public class FadeInOut : MonoBehaviour
             {
                 Image.color = Color.black;
                 _open = false;
+            }
+        }
+    }
+    
+    bool _isFadeIn = false;
+    bool _isFadeout = false;
+    bool _inFinish = false;
+    private bool _isOpen = false;
+    private GameObject _thisScene;
+    private GameObject _nextScene;
+    private PlayerController _thisScenePlayer;
+    private PlayerController _nextScenePlayer;
+    public void ReSpawnSceneFade(GameObject fadeIn, GameObject fadeOut)
+    {
+        _isFadeIn = false;
+        _isFadeout = false;
+        _inFinish = false;
+        _isOpen = true;
+        _thisScene = fadeIn;
+        _nextScene = fadeOut;
+        _thisScenePlayer = _thisScene.transform.Find("Player").GetComponent<PlayerController>();
+    }
+    
+    private void UpdateSceneFade()
+    {
+        if (!_isOpen)
+        {
+            return;
+        }
+        
+        if (!_isFadeIn)
+        {
+            FadeInOut.FadeInOutInstance.BackGroundControl(true);
+            _isFadeIn = true;
+        }
+
+        _thisScenePlayer.StopInput = true;
+        _thisScenePlayer.MoveState.ChangeState(XPlayerState.Idle);
+        _thisScenePlayer.Rigibody.velocity = Vector3.zero;
+        
+        if (FadeInOut.FadeInOutInstance.Image.color == Color.black)
+        {
+            if (_thisScene)
+                _thisScene.SetActive(false);
+            _inFinish = true;
+        }
+
+        if (_inFinish)
+        {
+            if (!_isFadeout)
+            {
+                FadeInOut.FadeInOutInstance.BackGroundControl(false);
+                _isFadeout = true;
+            }
+
+            if (_nextScene)
+                _nextScene.SetActive(true);
+
+            if (FadeInOut.FadeInOutInstance.Image.color == Color.clear)
+            {
+                var nextPlayer = _nextScene.transform.Find("Player").GetComponent<PlayerController>();
+                if (nextPlayer)
+                {
+                    nextPlayer.StopInput = false;
+                }
+                _isOpen = false;
             }
         }
     }
