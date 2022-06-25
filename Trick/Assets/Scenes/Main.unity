@@ -438,6 +438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 6051298866163124706, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6051298866163124707, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -741,10 +745,6 @@ PrefabInstance:
     - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: m_Name
       value: Start
-      objectReference: {fileID: 0}
-    - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8429339607099041753, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: nextScene
