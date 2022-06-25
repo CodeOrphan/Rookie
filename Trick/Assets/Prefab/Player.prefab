@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 5420391475270478247}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -254,22 +254,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 548c8ac8a7398864a9ddaf405390e943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Rigibody: {fileID: 0}
   Movement: {x: 0, y: 0, z: 0}
   SpriteModel: {fileID: 5420391475136746423}
   SmoothMovement: 1
   MovementSpeed: 10
   MovementFactor: 15
-  StartLevel: {fileID: 6791834863329482794, guid: 48884ad5c5b072e489b4f3f7cc3ec44e, type: 3}
-  Level1: {fileID: 135789883303207229, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
-  Level2: {fileID: 0}
-  Level3: {fileID: 0}
-  Root: {fileID: 0}
-  CurrentSceneName: 
-  StartUi: {fileID: 0}
-  Level1Ui: {fileID: 0}
-  Level2Ui: {fileID: 0}
-  Level3Ui: {fileID: 0}
   OnExitLevelPosition: {x: 0, y: 0, z: 0}
+  StopInput: 0
 --- !u!114 &5420391475270478247
 MonoBehaviour:
   m_ObjectHideFlags: 0
