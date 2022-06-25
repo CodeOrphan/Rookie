@@ -257,7 +257,7 @@ MonoBehaviour:
   Movement: {x: 0, y: 0, z: 0}
   SpriteModel: {fileID: 5420391475136746423}
   SmoothMovement: 1
-  MovementSpeed: 8
+  MovementSpeed: 10
   MovementFactor: 15
 --- !u!114 &5420391475270478247
 MonoBehaviour:

@@ -12,7 +12,7 @@ public class RotateCameraWithMouse : MonoBehaviour
 
     private void OnEnable()
     {
-        m_initAngle = transform.eulerAngles.y;
+        m_initAngle = NormalizeEuler(transform.eulerAngles.y);
     }
 
     void Update()
@@ -30,9 +30,28 @@ public class RotateCameraWithMouse : MonoBehaviour
         float distance = x - m_lastX;
         m_lastX = x;
         float angle = distance / Screen.currentResolution.width / 2 * 360;
-        angle = transform.eulerAngles.y + angle;
-        // angle = math.clamp(angle, m_initAngle - 90, m_initAngle + 90);
+        angle = NormalizeEuler(transform.eulerAngles.y + angle);
+
+        if (angle < m_initAngle - 90)
+        {
+            return;
+        }
+
+        if (angle > m_initAngle + 90)
+        {
+            return;
+        }
+
         Vector3 target = new Vector3(transform.eulerAngles.x, angle, transform.eulerAngles.z);
         transform.eulerAngles = target;
+    }
+
+    private float NormalizeEuler(float y)
+    {
+        if (y < -180f)
+            y = y + 360f;
+        else if (y > 180f)
+            y = y - 360f;
+        return y;
     }
 }
