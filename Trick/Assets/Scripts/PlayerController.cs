@@ -17,7 +17,7 @@ public enum XPlayerState
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    public Rigidbody Rigibody;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private BoxCollider _boxCollider;
@@ -39,18 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public float MovementFactor = 15;
 
-    public GameObject StartLevel;
-    public GameObject Level1;
-    public GameObject Level2;
-    public GameObject Level3;
-    public GameObject Root;
-    public string CurrentSceneName;
 
-
-    public GameObject StartUi;
-    public GameObject Level1Ui;
-    public GameObject Level2Ui;
-    public GameObject Level3Ui;
     
 
     public HashSet<int> _animatorParameters { get; set; }
@@ -61,7 +50,7 @@ public class PlayerController : MonoBehaviour
     private int _walkBottomParameter;
     private int _walkParameter;
 
-    public Vector3 Speed => _rigidbody.velocity;
+    public Vector3 Speed => Rigibody.velocity;
 
     private Vector3 _lastPosition;
     private Vector3 _positionTolerance;
@@ -71,7 +60,7 @@ public class PlayerController : MonoBehaviour
     private bool _initFinish;
     public void Start()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        Rigibody = GetComponent<Rigidbody>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider>();
@@ -92,143 +81,11 @@ public class PlayerController : MonoBehaviour
         RegisterAnimatorParameter("Walk", AnimatorControllerParameterType.Bool, out _walkParameter);
 
 
-        Root = new GameObject("Scence3D");
-        Root.transform.position = Vector3.zero;
-
-        if (_currentSceneId == 0)
-        {
-            if (LoadSceneEx(1))
-            {
-                _initFinish = true;
-            }
-        }
-    }
-    private bool _stopInput = false;
-    public GameObject LoadSceneEx(int id)
-    {
-        if (id == 1 && _currentSceneId == 0)
-        {
-            FadeInOut.FadeInOutInstance.Image.color = Color.black;
-        }
-
-        var t = Loadscene(id);
-        if (t == null)
-        {
-            return null;
-        }
-
-        ActiveUi(id);
-        FadeInOut.FadeInOutInstance.fadeSpeed = 1f;
-        FadeInOut.FadeInOutInstance.BackGroundControl(false);
-        return t;
-    }
-
-    /// <summary>
-    /// start = 1 level1 = 2....
-    /// </summary>
-    /// <param name="name"></param>
-    public GameObject Loadscene(int id)
-    {
-        foreach (var s in _instScene)
-        {
-            if (s.Scene.activeSelf)
-            {
-                s.Scene.SetActive(false);
-            }
-        }
-        
-        var scene = _instScene.Find(x => x.Id == id);
-        if (scene == null)
-        {
-            var s = Instantiate(GetPrefab(id), Root.transform, true);
-            if (s == null)
-            {
-                return null;
-            }
-
-            scene = new XGameScene()
-            {
-                Id = id,
-                Scene = s
-            };
-            
-            _instScene.Add(scene);
-        }
-        scene.Scene.transform.position = Vector3.zero;
-
-        if (_mainCamera != null)
-        {
-            Camera.main.orthographicSize = 20f;
-        }
-
-        var start =  scene.Scene.transform.Find("InitCamera");
-        Camera.main.transform.position = start?.position ?? Vector3.zero;
-        
-        _currentSceneId = id;
-        return scene.Scene;
-    }
-
-    private GameObject GetPrefab(int id)
-    {
-        switch (id)
-        {
-            case 1: return StartLevel;
-            case 2: return Level1;
-            case 3: return Level2;
-            case 4: return Level3;
-        }
-
-        return StartLevel;
     }
     
-    private void ActiveUi(int id)
-    {
-        if (StartUi != null && StartUi.activeSelf)
-        {
-            StartUi.SetActive(false);
-        }
+    public bool StopInput = false;
 
-        if (Level1 != null && Level1.activeSelf)
-        {
-            Level1Ui.SetActive(false);
-        }
-        if (Level2Ui != null&& Level2Ui.activeSelf)
-        {
-            Level2Ui.SetActive(false);
-        }
-        if (Level3Ui != null&& Level3Ui.activeSelf)
-        {
-            Level3Ui.SetActive(false);
-        }
-
-        var t = GetUI(id);
-        if (t != null && !t.activeSelf)
-        {
-            t.SetActive(true);
-        }
-    }
     
-    private GameObject GetUI(int id)
-    {
-        switch (id)
-        {
-            case 1: return StartUi;
-            case 2: return Level1Ui;
-            case 3: return Level2Ui;
-            case 4: return Level3Ui;
-        }
-
-        return StartLevel;
-    }
-
-    private List<XGameScene> _instScene = new List<XGameScene>();
-    private int _currentSceneId;
-
-    private class XGameScene
-    {
-        public int Id;
-        public GameObject Scene;
-    }
     
     public virtual void RegisterAnimatorParameter(string parameterName, AnimatorControllerParameterType parameterType,
         out int parameter)
@@ -261,22 +118,12 @@ public class PlayerController : MonoBehaviour
             _animatorParameters, true);
 
         _positionTolerance = transform.position - _lastPosition;
-
-        if (!_initFinish)
-        {
-            return;
-        }
-
-        UpdateLoadScene();
         
-        if (!_stopInput)
+        if (!StopInput)
         {
             UpdateMovement();
         }
-
         
-        
-        Vector3 dir = _mainCamera.position - transform.position;
 
         // SpriteModel.transform.LookAt(dir);
 
@@ -346,7 +193,7 @@ public class PlayerController : MonoBehaviour
         Vector3 realHorizontalForce;
         if (SmoothMovement)
         {
-            realHorizontalForce = Vector3.Lerp(_rigidbody.velocity, _normalizedHorizontalSpeed * MovementSpeed,
+            realHorizontalForce = Vector3.Lerp(Rigibody.velocity, _normalizedHorizontalSpeed * MovementSpeed,
                 Time.deltaTime * MovementFactor);
         }
         else
@@ -377,80 +224,12 @@ public class PlayerController : MonoBehaviour
             MoveState.ChangeState(XPlayerState.Idle);
         }
         
-        _rigidbody.velocity = realHorizontalForce;
+        Rigibody.velocity = realHorizontalForce;
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("ExitLevel") && other.isTrigger)
-        {
-            NextScene nextScene = other.gameObject.GetComponent<NextScene>();
-            if (nextScene == null)
-            {
-                return;
-            }
 
-            _nextScene = nextScene;
-        }
-    }
-
-    private NextScene _nextScene;
-    private bool _isFate;
-    private void UpdateLoadScene()
-    {
-        if (_nextScene != null)
-        {
-            _stopInput = true;
-            _rigidbody.velocity = Vector3.zero;
-            MoveState.ChangeState(XPlayerState.Idle);
-            
-            if (!_isFate)
-            {
-                FadeInOut.FadeInOutInstance.BackGroundControl(true);
-                _isFate = true;
-            }
-            
-            if (FadeInOut.FadeInOutInstance.Image.color != Color.black)
-            {
-                return;
-            }
-            
-            var t = LoadSceneEx(_nextScene.NextSceneId);
-            if (t == null)
-            {
-                throw new SystemException("next is null");
-            }
-            var nextPos =  t.transform.Find(_nextScene.StartPositionName);
-            if (nextPos != null)
-            {
-                transform.position = nextPos.position;
-            }
-
-            _nextScene = null;
-            _isFate = false;
-            _stopInput = false;
-        }
-    }
-    
-
-    private IEnumerator StartLoadScene(NextScene nextScene)
-    {
-        while (FadeInOut.FadeInOutInstance.Image.color != Color.black)
-        {
-            
-        }
-        
-        var t = LoadSceneEx(nextScene.NextSceneId);
-        if (t == null)
-        {
-            yield return null;;
-        }
-        var nextPos =  t.transform.Find(nextScene.StartPositionName);
-        if (nextPos != null)
-        {
-            transform.position = nextPos.position;
-        }
-        
     }
     
     public void OnTriggerExit(Collider other)

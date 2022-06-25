@@ -18,7 +18,7 @@ public class FadeInOut : MonoBehaviour
         {
             if (_fadeInOut == null)
             {
-                _fadeInOut = Camera.main.GetComponent<FadeInOut>();
+                _fadeInOut = FindObjectOfType<FadeInOut>();
             }
 
             return _fadeInOut;
@@ -28,6 +28,7 @@ public class FadeInOut : MonoBehaviour
     void Start()
     {
         //rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);//使背景满屏
+        _fadeInOut = GetComponent<FadeInOut>();
     }
 
     private const float _smallValue = 0.01f;
