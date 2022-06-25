@@ -1,26 +1,19 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NextScene : MonoBehaviour
 {
-    public int NextSceneId;
-    public string StartPositionName;
-
-    public BoxCollider BoxCollider;
-
-    public void Start()
-    {
-        BoxCollider = GetComponent<BoxCollider>();
-        
-    }
-
+    public GameObject thisScene;
+    public GameObject nextScene;
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        PlayerController playerController = other.GetComponent<PlayerController>();
+        if (playerController)
         {
-            GameController.Instance.SetScene(this);
+            // FadeInOut.FadeInOutInstance.BackGroundControl(true);
+            if(nextScene)
+                nextScene.SetActive(true);
+            if(thisScene)
+                thisScene.SetActive(false);
         }
     }
 }

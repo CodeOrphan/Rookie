@@ -29,7 +29,7 @@ public class RotateCameraWithMouse : MonoBehaviour
 
         float distance = x - m_lastX;
         m_lastX = x;
-        float angle = distance / Screen.currentResolution.width / 2 * 360;
+        float angle = distance / Screen.currentResolution.width * 2 * 360;
         angle = NormalizeEuler(transform.eulerAngles.y + angle);
 
         if (angle < m_initAngle - 90)
