@@ -73,6 +73,9 @@
      <Compile Include="Assets\Scripts\LensAberrationsLerp.cs" />
      <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\TonemappingColorGrading.cs" />
      <Compile Include="Assets\Scripts\StartView.cs" />
+     <Compile Include="Assets\Scripts\TouchByPlayer.cs" />
+     <Compile Include="Assets\Scripts\MeowPerMinute.cs" />
+     <Compile Include="Assets\Scripts\MultiCycleUse.cs" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\Resources\MedianFilter.shader" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\Resources\LensAberrations.shader" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Resources\Bloom.shader" />

@@ -5,6 +5,7 @@ public class ScareOffPlayer : MonoBehaviour
     public GameObject player;
     public GameObject ball;
     public GameObject badGirl;
+    public AudioSource audio;
     public float speed = 10f;
     public float time = 0.5f;
     public bool isScareOff = false;
@@ -84,5 +85,9 @@ public class ScareOffPlayer : MonoBehaviour
 
     private void Meow()
     {
+        if (audio)
+        {
+            audio.Play();
+        }
     }
 }
