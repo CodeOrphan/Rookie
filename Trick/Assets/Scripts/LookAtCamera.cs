@@ -4,6 +4,7 @@ public class LookAtCamera : MonoBehaviour
 {
     void Update()
     {
-        transform.forward = Camera.main.transform.forward;
+        float y = Camera.main.transform.eulerAngles.y;
+        transform.eulerAngles = new Vector3( transform.eulerAngles.x, y, transform.eulerAngles.z);
     }
 }
