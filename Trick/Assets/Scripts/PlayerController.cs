@@ -76,8 +76,6 @@ public class PlayerController : MonoBehaviour
 
         Physics2D.autoSyncTransforms = true;
         RegisterAnimatorParameter("Idle", AnimatorControllerParameterType.Bool, out _idleParameter);
-        RegisterAnimatorParameter("WalkTop", AnimatorControllerParameterType.Bool, out _walkTopParameter);
-        RegisterAnimatorParameter("WalkBottom", AnimatorControllerParameterType.Bool, out _walkBottomParameter);
         RegisterAnimatorParameter("Walk", AnimatorControllerParameterType.Bool, out _walkParameter);
 
         FadeInOut.FadeInOutInstance.BackGroundControl(false);
@@ -109,12 +107,6 @@ public class PlayerController : MonoBehaviour
             _animatorParameters, true);
         
         MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkParameter, MoveState.CurrentState == XPlayerState.Walk,
-            _animatorParameters, true);
-        
-        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkTopParameter, MoveState.CurrentState == XPlayerState.WalkTop,
-            _animatorParameters, true);
-        
-        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkBottomParameter, MoveState.CurrentState == XPlayerState.WalkBottom,
             _animatorParameters, true);
 
         _positionTolerance = transform.position - _lastPosition;
@@ -160,7 +152,7 @@ public class PlayerController : MonoBehaviour
         {
             if (SpriteModel != null)
             {
-                if (SpriteModel.transform.localScale.x < 0)
+                if (SpriteModel.transform.localScale.x > 0)
                 {
                     SpriteModel.transform.localScale =
                         Vector3.Scale(SpriteModel.transform.localScale, new Vector3(-1, 1, 1));
@@ -177,7 +169,7 @@ public class PlayerController : MonoBehaviour
         {
             if (SpriteModel != null)
             {
-                if (SpriteModel.transform.localScale.x > 0)
+                if (SpriteModel.transform.localScale.x < 0)
                 {
                     SpriteModel.transform.localScale =
                         Vector3.Scale(SpriteModel.transform.localScale, new Vector3(-1, 1, 1));
@@ -201,20 +193,9 @@ public class PlayerController : MonoBehaviour
             realHorizontalForce = _normalizedHorizontalSpeed * MovementSpeed;
         }
 
-        if (Mathf.Abs(_normalizedHorizontalSpeed.x) > SmallValue)
+        if (Mathf.Abs(_normalizedHorizontalSpeed.x) > SmallValue || Mathf.Abs(_normalizedHorizontalSpeed.z) > 0)
         {
             MoveState.ChangeState(XPlayerState.Walk);
-        }
-        
-        
-        if (_normalizedHorizontalSpeed.z > SmallValue)
-        {
-            MoveState.ChangeState(XPlayerState.WalkTop);
-        }
-        
-        if (_normalizedHorizontalSpeed.z < -SmallValue)
-        {
-            MoveState.ChangeState(XPlayerState.WalkBottom);
         }
         
 
