@@ -507,6 +507,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1Ex Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1311212814476743172, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1311212814476743175, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -549,6 +553,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1311212814476743175, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427695191890704460, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427695191890704460, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3412915371192217205, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
@@ -717,6 +729,10 @@ PrefabInstance:
     - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: m_Name
       value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8429339607099041753, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: nextScene
