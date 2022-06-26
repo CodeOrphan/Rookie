@@ -25,16 +25,16 @@ public class TextTimer : MonoBehaviour
                 {
                     txtTimer.color = Color.red;
                 }
-                txtTimer.text = "There is still room for cats to rule the world!!!:" + string.Format("{0:d2}", (int)second % 60);
+                txtTimer.text = "Load Time:" + string.Format("{0}", (int)second) + "s";
             }
             else
             {
-                txtTimer.text = "There is still room for cats to rule the world!!!:" + string.Format("{0:d2}:{1:d2}", (int)second / 60, (int)second % 60);
+                txtTimer.text = "Load Time:" + string.Format("{0}", (int)second) + "s";
             }
         }
         else
         {
-            txtTimer.text = "00:00";
+            txtTimer.text = "0s";
             txtTimer.color = Color.red;
         }
         
