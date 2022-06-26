@@ -7,7 +7,25 @@ using UnityEngine;
 public class GameController : PersistentSingleton<GameController>
 {
     public int PassLevelCount = 0;
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) /*|| Input.GetKeyDown(KeyCode.Home)*/)
+        {
+            Quit();
+        }
+    }
+
+    public void Quit()
+    {
+        //打包时不能使用
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        //测试时不能执行，打包后可以执行
+        Application.Quit();
+    }
+
     // private int _currentSceneId;
     //
     // private class XGameScene
