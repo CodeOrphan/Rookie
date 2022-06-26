@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 1223979085155043724}
   - component: {fileID: 586569977}
   - component: {fileID: 480332206}
+  - component: {fileID: 6218095128028724252}
   m_Layer: 5
   m_Name: StartButtom
   m_TagString: Untagged
@@ -784,6 +785,50 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &480332206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487119899287909635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1223979085155043724}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6218095128028724252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2229,13 +2274,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2154328790744634054}
     m_Modifications:
+    - target: {fileID: 760390472272022036, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: Play
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314404, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_Size.x
       value: 14.1978035
       objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314404, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_Size.z
-      value: 16.542027
+      value: 17.889473
       objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314404, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_Center.x
@@ -2243,7 +2292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314404, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_Center.z
-      value: 0.069890976
+      value: 9.319843
       objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314406, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_Name
@@ -2263,7 +2312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314407, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.36
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1021219171984314407, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2305,10 +2354,18 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3496639063579621466, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4126736891786209579, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8af292f117152a543be51099b137dc4a, type: 3}
+    - target: {fileID: 4126736891786209579, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8616676747767410969, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: thisScene
       value: 
