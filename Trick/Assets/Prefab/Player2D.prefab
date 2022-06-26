@@ -25,7 +25,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5420391475270478246, guid: 870b37b248cb9334a97382be6a1f4a50, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player2D
       objectReference: {fileID: 0}
     - target: {fileID: 5420391475270478250, guid: 870b37b248cb9334a97382be6a1f4a50, type: 3}
       propertyPath: m_Size.z
@@ -91,5 +91,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5420391475270478247, guid: 870b37b248cb9334a97382be6a1f4a50, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 870b37b248cb9334a97382be6a1f4a50, type: 3}
