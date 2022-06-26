@@ -642,6 +642,26 @@ PrefabInstance:
       propertyPath: nextScene
       value: 
       objectReference: {fileID: 1376581161}
+    - target: {fileID: 3848097992335173080, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
+      propertyPath: m_Color.b
+      value: 0.76214844
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
+      propertyPath: m_Color.g
+      value: 0.88814527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 0.581
+      objectReference: {fileID: 0}
     - target: {fileID: 6051298864765964096, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
       propertyPath: bgm1
       value: 
@@ -656,7 +676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6051298866163124706, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6051298866163124707, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
       propertyPath: m_RootOrder
@@ -952,7 +972,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2008036392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,7 +1112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712379579629706452, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: Play
