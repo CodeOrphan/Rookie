@@ -13,6 +13,7 @@ public enum XPlayerState
     WalkTop,
     WalkBottom,
     Walk,
+    FriedWool,
     
 }
 
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
     private int _walkTopParameter;
     private int _walkBottomParameter;
     private int _walkParameter;
+    private int _friedWoolParameter;
 
     public Vector3 Speed => Rigibody.velocity;
 
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
         Physics2D.autoSyncTransforms = true;
         RegisterAnimatorParameter("Idle", AnimatorControllerParameterType.Bool, out _idleParameter);
         RegisterAnimatorParameter("Walk", AnimatorControllerParameterType.Bool, out _walkParameter);
+        RegisterAnimatorParameter("FriedWool", AnimatorControllerParameterType.Bool, out _friedWoolParameter);
 
         FadeInOut.FadeInOutInstance.BackGroundControl(false);
     }
@@ -110,6 +113,9 @@ public class PlayerController : MonoBehaviour
         
         MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkParameter, MoveState.CurrentState == XPlayerState.Walk,
             _animatorParameters, true);
+        
+        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _friedWoolParameter, MoveState.CurrentState == XPlayerState.FriedWool,
+            _animatorParameters, true);
 
         _positionTolerance = transform.position - _lastPosition;
         
@@ -131,12 +137,25 @@ public class PlayerController : MonoBehaviour
             Camera.main.GetComponent<FadeInOut>().BackGroundControl(true);
         }
         
+        var animatorInfo = _animator.GetCurrentAnimatorStateInfo (0);
         if (NewPosition != Vector3.zero)
         {
-            timer += Time.deltaTime * 0.5f;
-            transform.position = Vector3.Lerp(transform.position, NewPosition, Time.deltaTime);
-            Debug.Log(timer);
-            MoveState.ChangeState(XPlayerState.Walk);
+
+            if (!_friedWoolPlay)
+            {
+                MoveState.ChangeState(XPlayerState.FriedWool);
+                _friedWoolPlay = true;
+            }
+            if ((animatorInfo.normalizedTime > 1.0f) && (animatorInfo.IsName("FriedWool")))
+            {
+                _finishFriedWool = true;
+            }
+            if (_finishFriedWool)
+            {
+                timer += Time.deltaTime * 0.5f;
+                transform.position = Vector3.Lerp(transform.position, NewPosition, Time.deltaTime);
+                MoveState.ChangeState(XPlayerState.Walk);
+            }
         }
 
         if (timer >= 1)
@@ -147,6 +166,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private float timer;
+    private bool _friedWoolPlay;
+    private bool _finishFriedWool;
     public void LateUpdate()
     {
         _lastPosition = transform.position;
