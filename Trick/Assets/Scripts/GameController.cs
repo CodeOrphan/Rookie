@@ -9,6 +9,11 @@ public class GameController : PersistentSingleton<GameController>
     public int PassLevelCount = 0;
     public Vector3 ResetCat2Position;
 
+    public void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) /*|| Input.GetKeyDown(KeyCode.Home)*/)
