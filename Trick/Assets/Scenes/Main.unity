@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PassLevelCount: 0
+  ResetCat2Position: {x: 0, y: 0, z: 0}
 --- !u!1 &111413661
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 8572056611114824327, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8929475037174251710, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
       propertyPath: nextScene
       value: 
@@ -547,7 +552,7 @@ PrefabInstance:
       objectReference: {fileID: 1546854147}
     - target: {fileID: 212665912653570761, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_Name
@@ -555,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 221211468705745026, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_RootOrder
@@ -605,9 +610,9 @@ PrefabInstance:
       propertyPath: nextScene
       value: 
       objectReference: {fileID: 680368130}
-    - target: {fileID: 4856922208420122621, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
-      propertyPath: Play
-      value: 1
+    - target: {fileID: 5171869007874774479, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
@@ -618,10 +623,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 406528738, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: nextScene
-      value: 
-      objectReference: {fileID: 1376581161}
     - target: {fileID: 2093513517, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
       propertyPath: bgm1
       value: 
@@ -634,34 +635,6 @@ PrefabInstance:
       propertyPath: nextScene
       value: 
       objectReference: {fileID: 1376581161}
-    - target: {fileID: 3848097992335173080, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: m_DynamicOccludee
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: m_Color.b
-      value: 0.76214844
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: m_Color.g
-      value: 0.88814527
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9339623
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051298864396549540, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: m_Shadows.m_Strength
-      value: 0.581
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051298864765964096, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: bgm1
-      value: 
-      objectReference: {fileID: 1508972558}
-    - target: {fileID: 6051298864765964096, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
-      propertyPath: bgm2
-      value: 
-      objectReference: {fileID: 170465469}
     - target: {fileID: 6051298866163124706, guid: 93d6ebf7075a26a498ed73ad7b64fdee, type: 3}
       propertyPath: m_Name
       value: Level3
@@ -879,10 +852,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1Ex Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 1311212814476743172, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1311212814476743175, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -964,7 +933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2008036392
 MonoBehaviour:
   m_ObjectHideFlags: 0
