@@ -852,6 +852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1Ex Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1311212814476743172, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1311212814476743175, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -898,11 +902,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1427695191890704460, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1427695191890704460, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3412915371192217205, guid: ea10fd8b569a1044787aaa54aabcab1f, type: 3}
       propertyPath: nextScene
