@@ -715,6 +715,7 @@ GameObject:
   - component: {fileID: 8572056610518863910}
   - component: {fileID: 8572056610518863914}
   - component: {fileID: 8347329718542898441}
+  - component: {fileID: 4661140572890375817}
   m_Layer: 7
   m_Name: Ball
   m_TagString: Untagged
@@ -832,6 +833,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 2194720365770470924}
+--- !u!114 &4661140572890375817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8572056610518863904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a33050a697ec364eb2a7989bbe34a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
 --- !u!1 &8572056610681731183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,7 +1482,7 @@ SpriteRenderer:
   m_Size: {x: 80, y: 45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &9058800219966528878
