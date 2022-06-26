@@ -8,6 +8,10 @@ public class TouchByPlayer : MonoBehaviour
     public AudioSource audio;
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision?.body == null)
+        {
+            return;
+        }
         if (collision.body.GetComponent<PlayerController>())
         {
             if (audio)
