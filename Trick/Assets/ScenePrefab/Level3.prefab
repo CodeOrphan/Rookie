@@ -297,7 +297,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6051298864398689884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,10 +1093,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 7394269562903964555, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7394269563854118564, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f7f272b9ef06399469fb66412dea81b1, type: 2}
+    - target: {fileID: 7394269563854118616, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
 --- !u!4 &3848097991417549046 stripped
@@ -1163,10 +1171,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7394269562903964555, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7394269563854118564, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6e9480fdc08b4dd48862ddedc7e379f7, type: 2}
+    - target: {fileID: 7394269563854118616, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
 --- !u!4 &3848097991197145394 stripped
@@ -1233,10 +1249,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7394269562903964555, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7394269563854118564, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 27b5eb319a33ecf47827899935a84657, type: 2}
+    - target: {fileID: 7394269563854118616, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
 --- !u!4 &3848097990759608272 stripped
@@ -1457,6 +1481,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7394269562903964555, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7394269563854118616, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
 --- !u!4 &3848097991122466798 stripped
@@ -1668,10 +1700,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7394269562903964555, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7394269563854118564, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8281fc44385e3034e978a379b9b69ca5, type: 2}
+    - target: {fileID: 7394269563854118616, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21b329b1ff7ca6543a2b386ef4822aed, type: 3}
 --- !u!4 &3848097992018739837 stripped
