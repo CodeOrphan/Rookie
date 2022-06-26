@@ -523,18 +523,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2
       objectReference: {fileID: 0}
-    - target: {fileID: 8572056611114824327, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8929475037174251710, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
       propertyPath: nextScene
       value: 
       objectReference: {fileID: 1958481654}
-    - target: {fileID: 9041528366771481541, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
-      propertyPath: Play
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6b13990b01fe8f489ea265dc01ecd22, type: 3}
 --- !u!1 &680368130 stripped
@@ -972,7 +964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2008036392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,11 +1104,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162203615394046735, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 712379579629706452, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: Play
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 955760386718435044, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
+      propertyPath: m_Size.z
+      value: 17.889473
+      objectReference: {fileID: 0}
+    - target: {fileID: 955760386718435044, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
+      propertyPath: m_Center.z
+      value: 9.319843
+      objectReference: {fileID: 0}
+    - target: {fileID: 955760386718435047, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740552700335845018, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8429339607099041753, guid: 46e58f35631b7844dba8226f5af87a73, type: 3}
       propertyPath: nextScene

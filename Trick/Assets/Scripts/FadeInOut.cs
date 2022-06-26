@@ -11,6 +11,8 @@ public class FadeInOut : MonoBehaviour
     public RectTransform rectTransform;
 
     private static FadeInOut _fadeInOut;
+    private static Canvas _baseCanvas;
+    private static Transform Root;
 
     public static FadeInOut FadeInOutInstance
     {
@@ -19,6 +21,18 @@ public class FadeInOut : MonoBehaviour
             if (_fadeInOut == null)
             {
                 _fadeInOut = FindObjectOfType<FadeInOut>();
+            }
+
+            if (_fadeInOut == null)
+            {
+                Root = new GameObject("FadeCanvas").transform;
+                var canvas = Root.gameObject.AddComponent<Canvas>();
+                canvas.worldCamera = Camera.main;
+
+                var image = new GameObject("FadeImage");
+                image.AddComponent<Image>();
+                _fadeInOut = image.AddComponent<FadeInOut>();
+                image.transform.SetParent(Root);
             }
 
             return _fadeInOut;
@@ -138,6 +152,10 @@ public class FadeInOut : MonoBehaviour
     //切换状态
     public void BackGroundControl(bool b)
     {
+        if (Image == null)
+        {
+            return;
+        }
         isBlack = b;
 
         if (!b)
