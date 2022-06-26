@@ -1623,6 +1623,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 5f0fa06c17ba0f44f8702da9d80b2321, type: 3}
+    - target: {fileID: 4126736891786209579, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8616676747767410969, guid: bf82ad5eecdd6214199b954d0b06407e, type: 3}
       propertyPath: thisScene
       value: 
