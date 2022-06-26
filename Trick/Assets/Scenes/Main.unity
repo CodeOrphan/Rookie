@@ -551,8 +551,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1546854147}
     - target: {fileID: 212665912653570761, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 212665912653570761, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 221211468705745025, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
       propertyPath: m_Name
@@ -610,10 +614,6 @@ PrefabInstance:
       propertyPath: nextScene
       value: 
       objectReference: {fileID: 680368130}
-    - target: {fileID: 5171869007874774479, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca1367b0ab64ba45abb38a258dfab04, type: 3}
 --- !u!1001 &1139082595
