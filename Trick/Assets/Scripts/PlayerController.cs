@@ -14,7 +14,6 @@ public enum XPlayerState
     WalkBottom,
     Walk,
     FriedWool,
-    
 }
 
 public class PlayerController : MonoBehaviour
@@ -23,11 +22,11 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private BoxCollider _boxCollider;
-    
+
     public Vector3 Movement;
 
     public GameObject SpriteModel;
-    
+
     public const string AxisHorizontal = "Horizontal";
     public const string AxisVertical = "Vertical";
 
@@ -41,8 +40,6 @@ public class PlayerController : MonoBehaviour
 
     public float MovementFactor = 15;
 
-
-    
 
     public HashSet<int> _animatorParameters { get; set; }
     public MMStateMachine<XPlayerState> MoveState;
@@ -62,13 +59,14 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 NewPosition;
     private bool _initFinish;
+
     public void Start()
     {
         Rigibody = GetComponent<Rigidbody>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider>();
-        
+
         _animatorParameters = new HashSet<int>();
         MoveState = new MMStateMachine<XPlayerState>(gameObject, true);
         if (Camera.main is not null) _mainCamera = Camera.main.transform;
@@ -85,11 +83,10 @@ public class PlayerController : MonoBehaviour
 
         FadeInOut.FadeInOutInstance.BackGroundControl(false);
     }
-    
+
     public bool StopInput = false;
 
-    
-    
+
     public virtual void RegisterAnimatorParameter(string parameterName, AnimatorControllerParameterType parameterType,
         out int parameter)
     {
@@ -106,25 +103,30 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+    }
+
     public void Update()
     {
         MMAnimatorExtensions.UpdateAnimatorBool(_animator, _idleParameter, MoveState.CurrentState == XPlayerState.Idle,
             _animatorParameters, true);
-        
+
         MMAnimatorExtensions.UpdateAnimatorBool(_animator, _walkParameter, MoveState.CurrentState == XPlayerState.Walk,
             _animatorParameters, true);
-        
-        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _friedWoolParameter, MoveState.CurrentState == XPlayerState.FriedWool,
+
+        MMAnimatorExtensions.UpdateAnimatorBool(_animator, _friedWoolParameter,
+            MoveState.CurrentState == XPlayerState.FriedWool,
             _animatorParameters, true);
 
         _positionTolerance = transform.position - _lastPosition;
-        
+
         if (!StopInput)
         {
             UpdateMovement();
         }
-        
 
+        PlayFriedWool();
         // SpriteModel.transform.LookAt(dir);
 
         if (Input.GetKey(KeyCode.Alpha1))
@@ -136,38 +138,52 @@ public class PlayerController : MonoBehaviour
         {
             Camera.main.GetComponent<FadeInOut>().BackGroundControl(true);
         }
-        
-        var animatorInfo = _animator.GetCurrentAnimatorStateInfo (0);
+
+        var animatorInfo = _animator.GetCurrentAnimatorStateInfo(0);
         if (NewPosition != Vector3.zero)
         {
-
-            if (!_friedWoolPlay)
-            {
-                MoveState.ChangeState(XPlayerState.FriedWool);
-                _friedWoolPlay = true;
-            }
-            if ((animatorInfo.normalizedTime > 1.0f) && (animatorInfo.IsName("FriedWool")))
-            {
-                _finishFriedWool = true;
-            }
-            if (_finishFriedWool)
-            {
-                timer += Time.deltaTime * 0.5f;
-                transform.position = Vector3.Lerp(transform.position, NewPosition, Time.deltaTime);
-                MoveState.ChangeState(XPlayerState.Walk);
-            }
+            timer += Time.deltaTime * 0.5f;
+            transform.position = Vector3.Lerp(transform.position, NewPosition, Time.deltaTime);
+            MoveState.ChangeState(XPlayerState.Walk);
         }
 
         if (timer >= 1)
         {
             NewPosition = Vector3.zero;
             MoveState.ChangeState(XPlayerState.Idle);
+            GameController.Instance.ResetCat2Position = transform.position;
+        }
+    }
+
+    public bool IsPlayFriedWool;
+
+    public void PlayFriedWool()
+    {
+        var animatorInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        if (!IsPlayFriedWool)
+        {
+            return;
+        }
+
+        if (!_friedWoolPlay)
+        {
+            MoveState.ChangeState(XPlayerState.FriedWool);
+            _friedWoolPlay = true;
+        }
+
+        
+        if ((animatorInfo.normalizedTime > 1.0f) && (animatorInfo.IsName("FriedWool")))
+        {
+            MoveState.ChangeState(XPlayerState.Idle);
+            IsPlayFriedWool = false;
+            _friedWoolPlay = false;
         }
     }
 
     private float timer;
     private bool _friedWoolPlay;
     private bool _finishFriedWool;
+
     public void LateUpdate()
     {
         _lastPosition = transform.position;
@@ -198,7 +214,6 @@ public class PlayerController : MonoBehaviour
             }
             else if (transform.localScale.x < 0)
             {
-                
                 transform.localScale =
                     Vector3.Scale(transform.localScale, new Vector3(-1, 1, 1));
             }
@@ -235,24 +250,22 @@ public class PlayerController : MonoBehaviour
         {
             MoveState.ChangeState(XPlayerState.Walk);
         }
-        
+
 
         if (Mathf.Abs(_normalizedHorizontalSpeed.x) < SmallValue &&
             Mathf.Abs(_normalizedHorizontalSpeed.z) < SmallValue)
         {
             MoveState.ChangeState(XPlayerState.Idle);
         }
-        
+
         Rigibody.velocity = realHorizontalForce;
     }
 
     public void OnTriggerEnter(Collider other)
     {
-
     }
-    
+
     public void OnTriggerExit(Collider other)
     {
-        
     }
 }

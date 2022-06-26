@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameController : PersistentSingleton<GameController>
 {
     public int PassLevelCount = 0;
+    public Vector3 ResetCat2Position;
 
     private void Update()
     {

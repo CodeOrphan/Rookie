@@ -75,5 +75,7 @@ public class ScareOffPlayer : MonoBehaviour
         {
             audio.Play();
         }
+
+        badGirl.GetComponent<PlayerController>().IsPlayFriedWool = true;
     }
 }

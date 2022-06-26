@@ -26,6 +26,11 @@ public class NextScene : MonoBehaviour
             {
                 GameController.Instance.PassLevelCount++;
             }
+
+            if (nextScene.name == "Level3")
+            {
+                GameController.Instance.ResetCat2Position = Vector3.zero;
+            }
         }
     }
 
