@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\TonemappingColorGrading.cs" />
      <Compile Include="Assets\Scripts\RotateCameraWithMouse.cs" />
      <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\ScreenSpaceReflection\ScreenSpaceReflection.cs" />
+     <Compile Include="Assets\Scripts\SwitchBgmOnTouch.cs" />
      <Compile Include="Assets\Scripts\ProgressDoorController.cs" />
      <Compile Include="Assets\Scripts\NextScene.cs" />
      <Compile Include="Assets\Scripts\KeepPositionOnEnable.cs" />
@@ -75,9 +76,9 @@
      <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\MinAttribute.cs" />
      <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Helpers\Settings.cs" />
      <Compile Include="Assets\Scripts\LensAberrationsLerp.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\ImageEffectHelper.cs" />
-     <Compile Include="Assets\Scripts\SwitchBgmOnTouch.cs" />
      <Compile Include="Assets\PlayAudioOnceOnTouch.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\ImageEffectHelper.cs" />
+     <Compile Include="Assets\DelayAnimator.cs" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\Resources\MedianFilter.shader" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\Resources\LensAberrations.shader" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Resources\Bloom.shader" />
