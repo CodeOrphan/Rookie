@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using System.Xml.Schema;
 using MoreMountains.Tools;
 using UnityEngine;
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
     private Transform _mainCamera;
     public Vector3 OnExitLevelPosition;
 
+    public Vector3 NewPosition;
     private bool _initFinish;
     public void Start()
     {
@@ -128,8 +130,23 @@ public class PlayerController : MonoBehaviour
         {
             Camera.main.GetComponent<FadeInOut>().BackGroundControl(true);
         }
+        
+        if (NewPosition != Vector3.zero)
+        {
+            timer += Time.deltaTime * 0.5f;
+            transform.position = Vector3.Lerp(transform.position, NewPosition, Time.deltaTime);
+            Debug.Log(timer);
+            MoveState.ChangeState(XPlayerState.Walk);
+        }
+
+        if (timer >= 1)
+        {
+            NewPosition = Vector3.zero;
+            MoveState.ChangeState(XPlayerState.Idle);
+        }
     }
 
+    private float timer;
     public void LateUpdate()
     {
         _lastPosition = transform.position;

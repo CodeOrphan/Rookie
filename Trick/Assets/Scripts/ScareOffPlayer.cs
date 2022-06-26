@@ -25,20 +25,6 @@ public class ScareOffPlayer : MonoBehaviour
                 UnfreezePlayer();
             }
         }
-
-        if (_newPosition != Vector3.zero)
-        {
-            timer += Time.deltaTime;
-            var t = Vector3.Lerp(player.transform.position, _newPosition, timer);
-            player.transform.position = t;
-            player.GetComponent<PlayerController>().MoveState.ChangeState(XPlayerState.Walk);
-        }
-
-        if (timer >= 1)
-        {
-            _newPosition = Vector3.zero;
-            player.GetComponent<PlayerController>().MoveState.ChangeState(XPlayerState.Idle);
-        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -78,8 +64,8 @@ public class ScareOffPlayer : MonoBehaviour
         //向下移动
         if (player)
         {
-            _newPosition = new Vector3(player.transform.position.x, player.transform.position.y,
-                player.transform.position.z - 10);
+            badGirl.GetComponent<PlayerController>().NewPosition = new Vector3(badGirl.transform.position.x, badGirl.transform.position.y,
+                badGirl.transform.position.z - 10);
         }
     }
 
