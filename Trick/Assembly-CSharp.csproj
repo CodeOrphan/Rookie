@@ -41,41 +41,42 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\RenderTextureUtility.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Bloom.cs" />
      <Compile Include="Assets\Scripts\MMAnimatorExtensions.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\AmbientOcclusion.cs" />
+     <Compile Include="Assets\Scripts\StartView.cs" />
      <Compile Include="Assets\Scripts\Tool\PersistentSingleton.cs" />
      <Compile Include="Assets\Scripts\WindowsMode.cs" />
      <Compile Include="Assets\Scripts\LimitPosition.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\TonemappingColorGrading.cs" />
      <Compile Include="Assets\Scripts\RotateCameraWithMouse.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\ScreenSpaceReflection\ScreenSpaceReflection.cs" />
      <Compile Include="Assets\Scripts\ProgressDoorController.cs" />
      <Compile Include="Assets\Scripts\NextScene.cs" />
+     <Compile Include="Assets\Scripts\KeepPositionOnEnable.cs" />
      <Compile Include="Assets\Scripts\BallRotateController.cs" />
      <Compile Include="Assets\Scripts\MMStateMachine.cs" />
      <Compile Include="Assets\Scripts\LevelController.cs" />
+     <Compile Include="Assets\Scripts\MeowPerMinute.cs" />
+     <Compile Include="Assets\Scripts\TouchByPlayer.cs" />
      <Compile Include="Assets\Scripts\ScareOffPlayer.cs" />
      <Compile Include="Assets\Scripts\LookAtCamera.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\LensAberrations.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Tool\BackgroundTree.cs" />
      <Compile Include="Assets\Scripts\FadeInOut.cs" />
-     <Compile Include="Assets\Scripts\TextTimer.cs" />
-     <Compile Include="Assets\Scripts\KeepPositionOnEnable.cs" />
      <Compile Include="Assets\Scripts\BallCrossDoor.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\ScreenSpaceReflection\ScreenSpaceReflection.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\LensAberrations.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\DepthOfField.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\ImageEffectHelper.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Helpers\Settings.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Bloom.cs" />
      <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Helpers\PropertyObserver.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\MinAttribute.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\AmbientOcclusion.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\RenderTextureUtility.cs" />
-     <Compile Include="Assets\Scripts\LensAberrationsLerp.cs" />
-     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\TonemappingColorGrading\TonemappingColorGrading.cs" />
-     <Compile Include="Assets\Scripts\StartView.cs" />
-     <Compile Include="Assets\Scripts\TouchByPlayer.cs" />
-     <Compile Include="Assets\Scripts\MeowPerMinute.cs" />
      <Compile Include="Assets\Scripts\MultiCycleUse.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\DepthOfField.cs" />
+     <Compile Include="Assets\Scripts\TextTimer.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\MinAttribute.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\AmbientOcclusion\Helpers\Settings.cs" />
+     <Compile Include="Assets\Scripts\LensAberrationsLerp.cs" />
+     <Compile Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Common\ImageEffectHelper.cs" />
+     <Compile Include="Assets\Scripts\SwitchBgmOnTouch.cs" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\DepthOfField\Resources\MedianFilter.shader" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\LensAberrations\Resources\LensAberrations.shader" />
      <None Include="Assets\Scripts\Tool\UnityStandardAssets\CinematicEffects\CinematicEffects(BETA)\Bloom\Resources\Bloom.shader" />
@@ -748,11 +749,11 @@
      <Reference Include="Unity.2D.IK.Editor">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
-     <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
+     <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>M:\Workspace\Rookie\trunk\Trick\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
